@@ -1,0 +1,108 @@
+/* Normalize */
+.fancyslider-container, .fancyslider-container * {
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Container and slides */
+.fancyslider-container {
+	margin: auto;
+	width: 600px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+.fancyslider-container .slide {
+	width: 100%;
+	height: 100%;
+	background-repeat: repeat;
+	background-size: cover;
+	background-position: center;
+	display: none;
+}
+
+/* History buttons */
+.fancyslider-container .prev, .fancyslider-container .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+.fancyslider-container .next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+.fancyslider-container .prev:hover, .fancyslider-container .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* Navigation (pills) */
+.fancyslider-container nav {
+	position: absolute;
+	bottom: 0.2em;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.fancyslider-container nav a {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #ccc;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.fancyslider-container nav a:hover, .fancyslider-container nav a.active {
+	background-color: #666;
+}
+
+/* Captions with animations*/
+.fancyslider-container .caption {
+	color:white;
+	background-color: rgba(0,0,0,0.4);
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0.4em;
+	border-radius: 0.2em;
+}
+.fancyslider-container .fade {
+	animation-name: fancyslider-fade;
+	animation-duration: 1.5s;
+}
+@keyframes fancyslider-fade {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+.fancyslider-container .caption-slideUp {
+	animation-name: caption-slideUp;
+	animation-duration: 2s;
+}
+@keyframes caption-slideUp {
+	from { top: 100%; }
+}
+.fancyslider-container .caption-slideDown {
+	animation-name: caption-slideDown;
+	animation-duration: 2s;
+}
+@keyframes caption-slideDown {
+	from { top: 0%; }
+}
+.fancyslider-container .caption-fadeIn {
+	animation-name: caption-fadeIn;
+	animation-duration: 2s;
+}
+@keyframes caption-fadeIn {
+	from { opacity: 0%; }
+}
