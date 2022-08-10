@@ -16,7 +16,7 @@ class fancySlider {
 			return instances;
 		}
 		this.element = selector[0];
-		this.currentSlide = 1;
+		this.currentSlide = null;
 
 		// Preload images
 		if(this.options.preloadImages){
@@ -79,20 +79,41 @@ class fancySlider {
 			this.autoplay();
 		}
 
-		this.showSlide(this.currentSlide);
+		this.showSlide(1);
 		return this;
 	}
 	showSlide(n){
-		this.currentSlide = (typeof n === 'undefined') ? this.currentSlide : n;
 		let slides = this.element.querySelectorAll(".slide");
+		let direction = (n>this.currentSlide)?"Right":"Left";
+		let revDirection = (direction=="Right")?"Left":"Right";
+		// Hide previous slide
+		if(this.currentSlide>=1){
+			setTimeout((i)=>{
+				slides[i-1].classList.remove("slide-slideInLeft");
+				slides[i-1].classList.remove("slide-slideOutLeft");
+				slides[i-1].classList.remove("slide-slideInRight");
+				slides[i-1].classList.remove("slide-slideOutRight");
+				slides[i-1].classList.add("slide-slideOut"+revDirection);
+			},50,this.currentSlide)
+		}
+
+		this.currentSlide = (typeof n === 'undefined') ? this.currentSlide : n;
 		this.currentSlide =
 			(this.currentSlide > slides.length) ? 1 :
 			(this.currentSlide < 1) ? slides.length :
 			this.currentSlide;
-		for (let i = 0; i < slides.length; i++) {
-		  slides[i].style.display = "none";
-		}
-		slides[this.currentSlide-1].style.display = "block";
+
+		// Show new slide
+		slides[this.currentSlide-1].style.display="none";
+		setTimeout((i)=>{
+			slides[i-1].style.display="block";
+			slides[i-1].classList.remove("slide-slideInLeft");
+			slides[i-1].classList.remove("slide-slideOutLeft");
+			slides[i-1].classList.remove("slide-slideInRight");
+			slides[i-1].classList.remove("slide-slideOutRight");
+			slides[i-1].classList.add("slide-slideIn"+direction);
+		},50,this.currentSlide)
+
 		this.element.querySelectorAll("nav a").forEach((element,index) => {
 			element.classList.remove("active");
 			if(index === this.currentSlide-1){
@@ -104,8 +125,7 @@ class fancySlider {
 		if(this.timer)
 			clearInterval(this.timer);
 		this.timer = setInterval(()=>{
-			this.currentSlide++;
-			this.showSlide();
+			this.showSlide(this.currentSlide+1);
 		}, this.options.autoplayDelay);
 
 	}
