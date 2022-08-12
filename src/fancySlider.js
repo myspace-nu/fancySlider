@@ -95,7 +95,8 @@ class fancySlider {
 		if(this.currentSlide>=1){
 			setTimeout((i)=>{
 				slides[i-1].className =
-					(slides[i-1].dataset["transition"] == "fadeIn") ? slides[i-1].dataset["initialClasses"]+" slide-fadeOut" :
+					(slides[i-1].dataset["transition"] == "fade") ? slides[i-1].dataset["initialClasses"]+" slide-fadeOut" :
+					(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"]+" slide-rotateOut"+revDirection :
 					slides[i-1].dataset["initialClasses"]+" slide-slideOut"+revDirection;
 			},50,this.currentSlide)
 		}
@@ -111,7 +112,8 @@ class fancySlider {
 		setTimeout((i)=>{
 			slides[i-1].style.display="block";
 			slides[i-1].className =
-				(slides[i-1].dataset["transition"] == "fadeIn") ? slides[i-1].dataset["initialClasses"]+" slide-fadeIn" :
+				(slides[i-1].dataset["transition"] == "fade") ? slides[i-1].dataset["initialClasses"]+" slide-fadeIn" :
+				(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"]+" slide-rotateIn"+direction :
 				slides[i-1].dataset["initialClasses"]+" slide-slideIn"+direction;
 		},50,this.currentSlide)
 
@@ -130,18 +132,6 @@ class fancySlider {
 		}, this.options.autoplayDelay);
 
 	}
-
-/*		
-		if(typeof selector === 'string') selector = document.querySelectorAll(selector);
-		selector.forEach(element => {
-			element.dataset['currentSlide'] = 1;
-			alert(element.dataset.currentSlide);
-			let links = element.querySelectorAll("a");
-			links.forEach(element => {
-//				alert(element.innerHTML);
-			});
-		});
-*/
 }
 
 (()=>{

@@ -124,6 +124,46 @@
 	from { opacity: 100%; display: block; }
 	to { opacity: 0%; display: none; }
 }
+.fancyslider-container .slide-rotateInLeft {
+	animation-name: slide-rotateInLeft;
+	animation-duration: 2s;
+	left: 0%;
+	transform:rotate(0deg);
+}
+@keyframes slide-rotateInLeft {
+	from { left: -100%; transform:rotate(-360deg); }
+	to { left: 0%; transform:rotate(0deg);}
+}
+.fancyslider-container .slide-rotateOutLeft {
+	animation-name: slide-rotateOutLeft;
+	animation-duration: 2s;
+	left: -100%;
+	transform:rotate(-360deg);
+}
+@keyframes slide-rotateOutLeft {
+	from { left: 0%; transform:rotate(0deg); }
+	to { left: -100%; transform:rotate(-360deg); }
+}
+.fancyslider-container .slide-rotateInRight {
+	animation-name: slide-rotateInRight;
+	animation-duration: 2s;
+	left: 0%;
+	transform:rotate(0deg);
+}
+@keyframes slide-rotateInRight {
+	from { left: 100%; transform:rotate(360deg); }
+	to { left: 0%; transform:rotate(0deg); }
+}
+.fancyslider-container .slide-rotateOutRight {
+	animation-name: slide-rotateOutRight;
+	animation-duration: 2s;
+	left: 100%;
+	transform:rotate(360deg);
+}
+@keyframes slide-rotateOutRight {
+	from { left: 0%; transform:rotate(0deg); }
+	to { left: 100%; transform:rotate(360deg); }
+}
 
 /* Captions with animations*/
 .fancyslider-container .caption {
@@ -132,6 +172,7 @@
 	display: inline-block;
 	position: absolute;
 	left: 50%;
+	top: 10%;
 	transform: translate(-50%, -50%);
 	padding: 0.4em;
 	border-radius: 0.2em;
