@@ -18,6 +18,11 @@ class fancySlider {
 		this.element = selector[0];
 		this.currentSlide = null;
 
+		// Save initial slide classes
+		this.element.querySelectorAll(".slide").forEach((element,index) => {
+			element.dataset['initialClasses'] = element.className;
+		});
+
 		// Preload images
 		if(this.options.preloadImages){
 			this.element.querySelectorAll("img").forEach((element) => {
@@ -89,11 +94,9 @@ class fancySlider {
 		// Hide previous slide
 		if(this.currentSlide>=1){
 			setTimeout((i)=>{
-				slides[i-1].classList.remove("slide-slideInLeft");
-				slides[i-1].classList.remove("slide-slideOutLeft");
-				slides[i-1].classList.remove("slide-slideInRight");
-				slides[i-1].classList.remove("slide-slideOutRight");
-				slides[i-1].classList.add("slide-slideOut"+revDirection);
+				slides[i-1].className =
+					(slides[i-1].dataset["transition"] == "fadeIn") ? slides[i-1].dataset["initialClasses"]+" slide-fadeOut" :
+					slides[i-1].dataset["initialClasses"]+" slide-slideOut"+revDirection;
 			},50,this.currentSlide)
 		}
 
@@ -107,11 +110,9 @@ class fancySlider {
 		slides[this.currentSlide-1].style.display="none";
 		setTimeout((i)=>{
 			slides[i-1].style.display="block";
-			slides[i-1].classList.remove("slide-slideInLeft");
-			slides[i-1].classList.remove("slide-slideOutLeft");
-			slides[i-1].classList.remove("slide-slideInRight");
-			slides[i-1].classList.remove("slide-slideOutRight");
-			slides[i-1].classList.add("slide-slideIn"+direction);
+			slides[i-1].className =
+				(slides[i-1].dataset["transition"] == "fadeIn") ? slides[i-1].dataset["initialClasses"]+" slide-fadeIn" :
+				slides[i-1].dataset["initialClasses"]+" slide-slideIn"+direction;
 		},50,this.currentSlide)
 
 		this.element.querySelectorAll("nav a").forEach((element,index) => {

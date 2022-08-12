@@ -77,7 +77,6 @@
 	from { left: -100%; }
 	to { left: 0%; }
 }
-
 .fancyslider-container .slide-slideOutLeft {
 	animation-name: slide-slideOutLeft;
 	animation-duration: 2s;
@@ -87,8 +86,6 @@
 	from { left: 0%; }
 	to { left: -100%; }
 }
-
-
 .fancyslider-container .slide-slideInRight {
 	animation-name: slide-slideInRight;
 	animation-duration: 2s;
@@ -98,7 +95,6 @@
 	from { left: 100%; }
 	to { left: 0%; }
 }
-
 .fancyslider-container .slide-slideOutRight {
 	animation-name: slide-slideOutRight;
 	animation-duration: 2s;
@@ -108,8 +104,26 @@
 	from { left: 0%; }
 	to { left: 100%; }
 }
-
-
+.fancyslider-container .slide-fadeIn {
+	animation-name: slide-fadeIn;
+	animation-duration: 2s;
+	opacity: 100%;
+	display: block;
+}
+@keyframes slide-fadeIn {
+	from { opacity: 0%; display: none; }
+	to { opacity: 100%; display: block; }
+}
+.fancyslider-container .slide-fadeOut {
+	animation-name: slide-fadeOut;
+	animation-duration: 2s;
+	opacity: 0%;
+	display: none;
+}
+@keyframes slide-fadeOut {
+	from { opacity: 100%; display: block; }
+	to { opacity: 0%; display: none; }
+}
 
 /* Captions with animations*/
 .fancyslider-container .caption {
@@ -122,7 +136,6 @@
 	padding: 0.4em;
 	border-radius: 0.2em;
 }
-
 .fancyslider-container .caption-slideUp {
 	animation-name: caption-slideUp;
 	animation-duration: 2s;
