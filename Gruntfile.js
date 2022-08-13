@@ -12,14 +12,14 @@ module.exports = function(grunt) {
                 ' */\n'
             },
             build: {
-                src: 'js/fancySlider.js',
-                dest: 'dist/fancySlider.min.js'
+                src: 'js/fancyslider.js',
+                dest: 'dist/fancyslider.min.js'
             }
         },
         cssmin: {
             target: {
               files: {
-                'dist/fancySlider.min.css': ['css/fancySlider.css']
+                'dist/fancyslider.min.css': ['css/fancyslider.css']
               }
             }
           }
