@@ -16,11 +16,11 @@ See a live demo on [CodePen](https://codepen.io/myspace-nu/full/RwMergO)
 	</style>
 
 	<div class="fancyslider-container mySlider">
-		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1659733683446-5837c203be5e?auto=format&fit=crop&w=765&q=80');">
+		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1576313269137-5c777923908f?&auto=format&fit=crop&fp-y=.70&w=800&h=600&q=80');">
 		</div>
-		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1659830638553-923c362b202f?auto=format&fit=crop&w=800&q=80');">
+		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507563669246-aaee3fa9a174?auto=format&fit=crop&w=800&q=80');">
 		</div>
-		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1659958661414-59d7bd483853?auto=format&fit=crop&w=800&q=80');">
+		<div class="slide" style="background-image: url('https://images.unsplash.com/photo-1573483587794-092bab380d9b?auto=format&fit=crop&w=800&q=80');">
 		</div>
 	</div>
 
