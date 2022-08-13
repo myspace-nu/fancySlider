@@ -16,38 +16,56 @@
 				display: inline-block;
 				position: absolute;
 				padding: 0.1em;
-				bottom: 10px;
-				right: 10px;
+				top: 10%;
+				left: 50%;
+				transform: translateX(-50%) rotate(0deg);
 			}
 			@keyframes caption-customSlide {
 				from {
-					bottom: 500px;
-					right: 1000px;
+					top: 150%;
+					left: 50%;
+					transform: translateX(-50%) rotate(720deg);
 				}
 				to {
-					bottom: 10px;
-					right: 10px;
+					top: 10%;
+					left: 50%;
+					transform: translateX(-50%) rotate(0deg);
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<div class="fancyslider-container mySlider">
-			<div class="slide" data-transition="rotate" style="background-image: url('https://images.unsplash.com/photo-1659733683446-5837c203be5e?auto=format&fit=crop&w=765&q=80');">
-				<div class="caption caption-slideUp" style="top:10%;"><h1><strong>fancySlider</strong></h1></div>
-				<div class="caption caption-slideUp" style="top:30%;">Lightweight, simple, beautiful</div>
+			<div class="slide" data-transition="fade" style="background-image: url('https://images.unsplash.com/photo-1576313269137-5c777923908f?&auto=format&fit=crop&fp-y=.70&w=800&h=600&q=80');">
+			  <div class="caption caption-top caption-center caption-slideUp">
+				<h1><strong>fancySlider</strong></h1>
+			  </div>
+			  <div class="caption caption-top caption-center caption-slideUp" style="top:20%;">Lightweight, simple, beautiful</div>
+			  <div class="caption caption-bottom caption-right">
+				<strong>Leopard (Panthera pardus)</strong><br />
+				<em><a href="https://unsplash.com/@hans_veth">&mdash; Hans Veth</a></em>
+			  </div>
 			</div>
-			<div class="slide" data-transition="slide" style="background-image: url('https://images.unsplash.com/photo-1659830638553-923c362b202f?auto=format&fit=crop&w=800&q=80');">
-				<div class="caption caption-fadeIn"><h1><strong>I'm fading!</strong></h1></div>
+			<div class="slide" data-transition="fade" style="background-image: url('https://images.unsplash.com/photo-1507563669246-aaee3fa9a174?auto=format&fit=crop&w=800&q=80');">
+				<div class="caption caption-top caption-center caption-slideUp">Lightweight, no dependencies, only 3kb</div>
+				<div class="caption caption-bottom caption-right">
+					<strong>Long-tailed macaque (Macaca fascicularis)</strong><br />
+					<em><a href="https://unsplash.com/@vincentvanzalinge">&mdash; Vincent van Zalinge</a></em>
+				</div>
 			</div>
-			<div class="slide" data-transition="fade" style="background-image: url('https://images.unsplash.com/photo-1659958661414-59d7bd483853?auto=format&fit=crop&w=800&q=80');">
-				<div class="caption-customSlide"><h1><strong>Custom animation</strong></h1></div>
+			<div class="slide" data-transition="fade" style="background-image: url('https://images.unsplash.com/photo-1573483587794-092bab380d9b?auto=format&fit=crop&w=800&q=80');">
+				<div class="caption caption-customSlide"><h2>Yet so powerful!</h2></div>
+				<div class="caption caption-bottom caption-right">
+					<strong>Killer whale (Orcinus orca)</strong><br />
+					<em><a href="https://unsplash.com/@noaa">&mdash; The National Oceanic and Atmospheric Administration</a></em>
+				</div>
 			</div>
 		</div>
 		<script src="../js/fancySlider.js"></script>
 		<script>
 			let mySlider = new fancySlider(".mySlider", {
-				navigation: true
+				navigation: true,
+				autoplay: true
 			});
 		</script>
 	</body>

@@ -3,6 +3,8 @@
 	box-sizing:border-box;
 	margin: 0;
 	padding: 0;
+	color: white;
+	text-decoration: none;
 }
 
 /* Container and slides */
@@ -31,7 +33,6 @@
 	width: auto;
 	margin-top: -22px;
 	padding: 16px;
-	color: white;
 	font-weight: bold;
 	font-size: 18px;
 	transition: 0.6s ease;
@@ -165,18 +166,41 @@
 	to { left: 100%; transform:rotate(360deg); }
 }
 
-/* Captions with animations*/
+/* Captions */
 .fancyslider-container .caption {
 	color:white;
+	white-space: nowrap;
 	background-color: rgba(0,0,0,0.4);
 	display: inline-block;
 	position: absolute;
-	left: 50%;
-	top: 10%;
-	transform: translate(-50%, -50%);
 	padding: 0.4em;
 	border-radius: 0.2em;
 }
+/* Caption positions */
+.fancyslider-container .caption-top {
+	top: 5%;
+}
+.fancyslider-container .caption-middle {
+	transform: translateY(-50%);
+	top: 50%;
+}
+.fancyslider-container .caption-bottom {
+	bottom: 5%;
+}
+.fancyslider-container .caption-left {
+	left: 5%;
+}
+.fancyslider-container .caption-center {
+	transform: translateX(-50%);
+	left: 50%;
+}
+.fancyslider-container .caption-right {
+	right: 5%;
+}
+.fancyslider-container .caption-middle.caption-middle {
+	transform: translate(-50%,-50%);
+}
+/* Caption animations */
 .fancyslider-container .caption-slideUp {
 	animation-name: caption-slideUp;
 	animation-duration: 2s;
