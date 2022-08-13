@@ -12,7 +12,7 @@ See a live demo on [CodePen](https://codepen.io/myspace-nu/full/RwMergO)
 ## Usage
 
 	<style>
-		@import url('../css/fancySlider.css');
+		@import url('../css/fancyslider.css');
 	</style>
 
 	<div class="fancyslider-container mySlider">
@@ -24,7 +24,7 @@ See a live demo on [CodePen](https://codepen.io/myspace-nu/full/RwMergO)
 		</div>
 	</div>
 
-	<script src="../js/fancySlider.js"></script>
+	<script src="../js/fancyslider.js"></script>
 	<script>
 		let mySlider = new fancySlider(".mySlider", { });
 	</script>
