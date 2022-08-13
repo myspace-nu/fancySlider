@@ -1,0 +1,26 @@
+{
+  "name": "fancyslider",
+  "version": "1.0.0",
+  "description": "A lightweight JavaScript image slider",
+  "main": "dist/fancyslider.min.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "keywords": [
+    "image",
+    "slider",
+    "carousel"
+  ],
+  "author": "Johan Johansson",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "grunt": "^1.5.3",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-eslint": "^24.0.0"
+  }
+}
