@@ -1,6 +1,6 @@
 {
   "name": "fancyslider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight JavaScript image slider",
   "main": "dist/fancyslider.min.js",
   "directories": {
