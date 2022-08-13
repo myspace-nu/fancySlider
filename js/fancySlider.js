@@ -89,15 +89,15 @@ class fancySlider {
 	}
 	showSlide(n){
 		let slides = this.element.querySelectorAll(".slide");
-		let direction = (n>this.currentSlide)?"Right":"Left";
-		let revDirection = (direction=="Right")?"Left":"Right";
+		let direction = (n>this.currentSlide) ? "Right" : "Left";
+		let revDirection = (direction=="Right") ? "Left" : "Right";
 		// Hide previous slide
 		if(this.currentSlide>=1){
 			setTimeout((i)=>{
 				slides[i-1].className =
-					(slides[i-1].dataset["transition"] == "fade") ? slides[i-1].dataset["initialClasses"]+" slide-fadeOut" :
-					(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"]+" slide-rotateOut"+revDirection :
-					slides[i-1].dataset["initialClasses"]+" slide-slideOut"+revDirection;
+					(slides[i-1].dataset["transition"] == "slide") ? slides[i-1].dataset["initialClasses"] + " slide-slideOut" + revDirection :
+					(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"] + " slide-rotateOut" + revDirection :
+					slides[i-1].dataset["initialClasses"] + " slide-fadeOut";
 			},50,this.currentSlide)
 		}
 
@@ -112,9 +112,9 @@ class fancySlider {
 		setTimeout((i)=>{
 			slides[i-1].style.display="block";
 			slides[i-1].className =
-				(slides[i-1].dataset["transition"] == "fade") ? slides[i-1].dataset["initialClasses"]+" slide-fadeIn" :
-				(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"]+" slide-rotateIn"+direction :
-				slides[i-1].dataset["initialClasses"]+" slide-slideIn"+direction;
+				(slides[i-1].dataset["transition"] == "slide") ? slides[i-1].dataset["initialClasses"] + " slide-slideIn" + direction :
+				(slides[i-1].dataset["transition"] == "rotate") ? slides[i-1].dataset["initialClasses"] + " slide-rotateIn" + direction :
+				slides[i-1].dataset["initialClasses"] + " slide-fadeIn";
 		},50,this.currentSlide)
 
 		this.element.querySelectorAll("nav a").forEach((element,index) => {
