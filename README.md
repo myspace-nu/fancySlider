@@ -67,6 +67,12 @@ See a live demo on [CodePen](https://codepen.io/myspace-nu/full/RwMergO)
 
 *Default: 5000*
 
+**onShow(fancySlider)** - Event that fires when a new slide is shown
+
+**onStart(fancySlider)** - Event that fires when autoplay starts.
+
+**onStop(fancySlider)** - Event that fires when autoplay stops.
+
 ## Slide transitions
 
 Slide transitions are defined by the data-transition attribute. Available transitions are:

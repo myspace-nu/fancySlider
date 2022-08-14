@@ -5,7 +5,10 @@ class fancySlider {
 			navigation: false,
 			pagination: false,
 			preloadImages: true,
-			autoplayDelay: 5000
+			autoplayDelay: 5000,
+			onShow: ()=>{},
+			onStart: ()=>{},
+			onStop: ()=>{}
 		}, options)
 		if(typeof selector === 'string')
 			selector = document.querySelectorAll(selector);
@@ -130,16 +133,19 @@ class fancySlider {
 		if(this.options.pagination){
 			this.paginationElement.innerHTML = this.currentSlide + " / " + slides.length;		 
 		}
+		this.options.onShow.call(this,this);
 	}
 	start(){
 		this.stop();
 		this.timer = setInterval(()=>{
 			this.show(this.currentSlide+1);
 		}, this.options.autoplayDelay);
+		this.options.onStart.call(this,this);
 	}
 	stop(){
 		if(this.timer)
 			clearInterval(this.timer);
+		this.options.onStop.call(this,this);
 	}
 	forward(){
 		this.show(this.currentSlide+1);
