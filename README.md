@@ -33,31 +33,37 @@ See a live demo on [CodePen](https://codepen.io/myspace-nu/full/RwMergO)
 
 **navigation** - Navigation pills
 
-    navigation: true
+	navigation: true
+
+*Default: false*
+
+**pagination** - Pagination (slide number) (boolean, query selector string or DOM object)
+
+	pagination: true
 
 *Default: false*
 
 **history** - Back / Forward buttons
 
-    history: false
+	history: false
 
 *Default: true*
 
 **preloadImages** - Preload all images found in the slider element
 
-    preloadImages: false
+	preloadImages: false
 
 *Default: true*
 
 **autoplay** - Automatically swap between slides
 
-    autoplay: true
+	autoplay: true
 
 *Default: false*
 
 **autoplayDelay** - Delay between slides with using autoplay (in milliseconds)
 
-    autoplayDelay: 3000
+	autoplayDelay: 3000
 
 *Default: 5000*
 

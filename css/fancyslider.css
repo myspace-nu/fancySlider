@@ -3,6 +3,7 @@
 	box-sizing:border-box;
 	margin: 0;
 	padding: 0;
+	font-family: Helvetica, sans-serif;
 	color: white;
 	text-decoration: none;
 }
@@ -50,9 +51,9 @@
 /* Navigation (pills) */
 .fancyslider-container nav {
 	position: absolute;
-	bottom: 0.2em;
+	bottom: 5px;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
 }
 .fancyslider-container nav a {
 	cursor: pointer;
@@ -66,6 +67,15 @@
 }
 .fancyslider-container nav a:hover, .fancyslider-container nav a.active {
 	background-color: #666;
+}
+
+/* Pagination */
+.fancyslider-container .pagination {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	font-weight: lighter;
+	font-size: .9rem;
 }
 
 /* Slide transitions */

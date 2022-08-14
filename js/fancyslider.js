@@ -3,6 +3,7 @@ class fancySlider {
 		this.options = Object.assign({
 			history: true,
 			navigation: false,
+			pagination: false,
 			preloadImages: true,
 			autoplayDelay: 5000
 		}, options)
@@ -60,8 +61,6 @@ class fancySlider {
 			});
 			navlink.classList.add("next")
 			this.element.appendChild(navlink);
-
-
 		}
 
 		// Navigation
@@ -78,6 +77,17 @@ class fancySlider {
 				nav.appendChild(navlink);
 			});
 			this.element.appendChild(nav);
+		}
+
+		// Navigation
+		if(this.options.pagination){
+			this.paginationElement = document.createElement("div");
+			this.paginationElement.className = "pagination";
+			let appendTo = (typeof this.options.pagination === 'boolean') ? this.element :
+				(typeof this.options.pagination === 'string' && document.querySelector(this.options.pagination)) ? document.querySelector(this.options.pagination) :
+				(typeof this.options.pagination === 'object') ? this.options.pagination :
+				this.element;
+			appendTo.appendChild(this.paginationElement);
 		}
 
 		if(this.options.autoplay){
@@ -123,6 +133,9 @@ class fancySlider {
 				element.classList.add("active");
 			}
 		});
+		if(this.options.pagination){
+			this.paginationElement.innerHTML = this.currentSlide + " / " + slides.length;		 
+		}
 	}
 	autoplay(){
 		if(this.timer)
