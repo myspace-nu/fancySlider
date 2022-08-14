@@ -44,20 +44,14 @@ class fancySlider {
 			navlink = document.createElement("a");
 			navlink.innerHTML = "&#10094;";
 			navlink.addEventListener("click", (evt)=>{
-				this.showSlide(this.currentSlide-1);
-				if(this.options.autoplay){
-					this.autoplay();
-				}
+				this.backward();
 			});
 			navlink.classList.add("prev")
 			this.element.appendChild(navlink);
 			navlink = document.createElement("a");
 			navlink.innerHTML = "&#10095;";
 			navlink.addEventListener("click", (evt)=>{
-				this.showSlide(this.currentSlide+1);
-				if(this.options.autoplay){
-					this.autoplay();
-				}
+				this.forward();
 			});
 			navlink.classList.add("next")
 			this.element.appendChild(navlink);
@@ -69,9 +63,9 @@ class fancySlider {
 			this.element.querySelectorAll(".slide").forEach((element,index) => {
 				let navlink = document.createElement("a")
 				navlink.addEventListener("click", (evt)=>{
-					this.showSlide(index+1);
+					this.show(index+1);
 					if(this.options.autoplay){
-						this.autoplay();
+						this.start();
 					}
 				});
 				nav.appendChild(navlink);
@@ -91,13 +85,13 @@ class fancySlider {
 		}
 
 		if(this.options.autoplay){
-			this.autoplay();
+			this.start();
 		}
 
-		this.showSlide(1);
+		this.show(1);
 		return this;
 	}
-	showSlide(n){
+	show(n){
 		let slides = this.element.querySelectorAll(".slide");
 		let direction = (n>this.currentSlide) ? "Right" : "Left";
 		let revDirection = (direction=="Right") ? "Left" : "Right";
@@ -137,13 +131,25 @@ class fancySlider {
 			this.paginationElement.innerHTML = this.currentSlide + " / " + slides.length;		 
 		}
 	}
-	autoplay(){
+	start(){
+		this.stop();
+		this.timer = setInterval(()=>{
+			this.show(this.currentSlide+1);
+		}, this.options.autoplayDelay);
+	}
+	stop(){
 		if(this.timer)
 			clearInterval(this.timer);
-		this.timer = setInterval(()=>{
-			this.showSlide(this.currentSlide+1);
-		}, this.options.autoplayDelay);
-
+	}
+	forward(){
+		this.show(this.currentSlide+1);
+		if(this.options.autoplay)
+			this.start();
+	}
+	backward(){
+		this.show(this.currentSlide-1);
+		if(this.options.autoplay)
+			this.start();
 	}
 }
 

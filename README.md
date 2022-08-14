@@ -75,4 +75,16 @@ Slide transitions are defined by the data-transition attribute. Available transi
 * slide
 * rotate
 
+## Methods
+
+**play()** - Starts autoplay from the current slide
+
+**stop()** - Stops autoplay
+
+**forward()** - Show the next slide
+
+**backward()** - Show the previous slide
+
+**show(n)** - Show slide *n*
+
 ### Author: [Johan Johansson](https://github.com/myspace-nu)
