@@ -2,8 +2,9 @@
 
 A lightweight JavaScript image slider
 
-[![Build Status](https://img.shields.io/github/workflow/status/myspace-nu/fancySlider/CI)](https://github.com/myspace-nu/fancySlider/actions)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/myspace-nu/fancySlider/blob/master/LICENSE)
+[![Code size](https://img.shields.io/github/languages/code-size/myspace-nu/fancySlider)](https://github.com/myspace-nu/fancySlider)
+[![Issues](https://img.shields.io/github/issues-raw/myspace-nu/fancySlider)](https://github.com/myspace-nu/fancySlider/issues)
 
 ## Live demo
 
